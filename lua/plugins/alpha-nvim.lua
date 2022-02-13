@@ -2,8 +2,6 @@
 -- ───────────────────────────────────────────────── --
 --   Plugin:    alpha-nvim
 --   Github:    github.com/goolord/alpha-nvim
--- ───────────────────────────────────────────────── --
--- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ --
 -- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ --
 -- ━━━━━━━━━━━━━━━━━━━❰ configs ❱━━━━━━━━━━━━━━━━━━━ --
 -- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ --
@@ -38,7 +36,7 @@ dashboard.section.buttons.val = {
 	dashboard.button("q", "  > Quit NVIM", ":qa<CR>"),
 }
 
-dashboard.section.footer.val = footer()
+-- dashboard.section.footer.val = footer()
 
 -- Send config to alpha
 alpha.setup(dashboard.opts)

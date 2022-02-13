@@ -44,8 +44,8 @@ local function save_profiles(threshold)
 end
 
 time([[Luarocks path setup]], true)
-local package_path_str = "/home/wandsx/.cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?.lua;/home/wandsx/.cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?/init.lua;/home/wandsx/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?.lua;/home/wandsx/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?/init.lua"
-local install_cpath_pattern = "/home/wandsx/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/lua/5.1/?.so"
+local package_path_str = "/home/organ1sm/.cache/nvim/packer_hererocks/2.0.5/share/lua/5.1/?.lua;/home/organ1sm/.cache/nvim/packer_hererocks/2.0.5/share/lua/5.1/?/init.lua;/home/organ1sm/.cache/nvim/packer_hererocks/2.0.5/lib/luarocks/rocks-5.1/?.lua;/home/organ1sm/.cache/nvim/packer_hererocks/2.0.5/lib/luarocks/rocks-5.1/?/init.lua"
+local install_cpath_pattern = "/home/organ1sm/.cache/nvim/packer_hererocks/2.0.5/lib/lua/5.1/?.so"
 if not string.find(package.path, package_path_str, 1, true) then
   package.path = package.path .. ';' .. package_path_str
 end
@@ -72,197 +72,203 @@ _G.packer_plugins = {
   ["AutoSave.nvim"] = {
     config = { " require ('plugins/autoSave-nvim')" },
     loaded = true,
-    path = "/home/wandsx/.local/share/nvim/site/pack/packer/start/AutoSave.nvim",
+    path = "/home/organ1sm/.local/share/nvim/site/pack/packer/start/AutoSave.nvim",
     url = "https://github.com/Pocco81/AutoSave.nvim"
   },
   ["Comment.nvim"] = {
     config = { " require('plugins/Comment-nvim') " },
     loaded = true,
-    path = "/home/wandsx/.local/share/nvim/site/pack/packer/start/Comment.nvim",
+    path = "/home/organ1sm/.local/share/nvim/site/pack/packer/start/Comment.nvim",
     url = "https://github.com/numToStr/Comment.nvim"
   },
   ["alpha-nvim"] = {
     config = { " require('plugins/alpha-nvim') " },
     loaded = true,
-    path = "/home/wandsx/.local/share/nvim/site/pack/packer/start/alpha-nvim",
+    path = "/home/organ1sm/.local/share/nvim/site/pack/packer/start/alpha-nvim",
     url = "https://github.com/goolord/alpha-nvim"
   },
   ["cmp-buffer"] = {
     loaded = true,
-    path = "/home/wandsx/.local/share/nvim/site/pack/packer/start/cmp-buffer",
+    path = "/home/organ1sm/.local/share/nvim/site/pack/packer/start/cmp-buffer",
     url = "https://github.com/hrsh7th/cmp-buffer"
   },
   ["cmp-cmdline"] = {
     loaded = true,
-    path = "/home/wandsx/.local/share/nvim/site/pack/packer/start/cmp-cmdline",
+    path = "/home/organ1sm/.local/share/nvim/site/pack/packer/start/cmp-cmdline",
     url = "https://github.com/hrsh7th/cmp-cmdline"
   },
   ["cmp-emoji"] = {
     loaded = true,
-    path = "/home/wandsx/.local/share/nvim/site/pack/packer/start/cmp-emoji",
+    path = "/home/organ1sm/.local/share/nvim/site/pack/packer/start/cmp-emoji",
     url = "https://github.com/hrsh7th/cmp-emoji"
   },
   ["cmp-nvim-lsp"] = {
     loaded = true,
-    path = "/home/wandsx/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
+    path = "/home/organ1sm/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
     url = "https://github.com/hrsh7th/cmp-nvim-lsp"
   },
   ["cmp-nvim-lua"] = {
     loaded = true,
-    path = "/home/wandsx/.local/share/nvim/site/pack/packer/start/cmp-nvim-lua",
+    path = "/home/organ1sm/.local/share/nvim/site/pack/packer/start/cmp-nvim-lua",
     url = "https://github.com/hrsh7th/cmp-nvim-lua"
   },
   ["cmp-path"] = {
     loaded = true,
-    path = "/home/wandsx/.local/share/nvim/site/pack/packer/start/cmp-path",
+    path = "/home/organ1sm/.local/share/nvim/site/pack/packer/start/cmp-path",
     url = "https://github.com/hrsh7th/cmp-path"
   },
   ["github-nvim-theme"] = {
     config = { " require('plugins/github-nvim-theme') " },
     loaded = false,
     needs_bufread = false,
-    path = "/home/wandsx/.local/share/nvim/site/pack/packer/opt/github-nvim-theme",
+    path = "/home/organ1sm/.local/share/nvim/site/pack/packer/opt/github-nvim-theme",
     url = "https://github.com/projekt0n/github-nvim-theme"
   },
   ["lsp-status.nvim"] = {
     config = { " require('lsp/lsp-status') " },
     loaded = true,
-    path = "/home/wandsx/.local/share/nvim/site/pack/packer/start/lsp-status.nvim",
+    path = "/home/organ1sm/.local/share/nvim/site/pack/packer/start/lsp-status.nvim",
     url = "https://github.com/nvim-lua/lsp-status.nvim"
   },
   ["lsp_signature.nvim"] = {
     config = { " require('lsp/lsp-signature') " },
     loaded = true,
-    path = "/home/wandsx/.local/share/nvim/site/pack/packer/start/lsp_signature.nvim",
+    path = "/home/organ1sm/.local/share/nvim/site/pack/packer/start/lsp_signature.nvim",
     url = "https://github.com/ray-x/lsp_signature.nvim"
   },
   ["lspkind-nvim"] = {
     config = { " require('lsp/lspkind-nvim') " },
     loaded = true,
-    path = "/home/wandsx/.local/share/nvim/site/pack/packer/start/lspkind-nvim",
+    path = "/home/organ1sm/.local/share/nvim/site/pack/packer/start/lspkind-nvim",
     url = "https://github.com/onsails/lspkind-nvim"
   },
   ["lualine.nvim"] = {
     config = { " require('plugins/lualine') " },
     loaded = true,
-    path = "/home/wandsx/.local/share/nvim/site/pack/packer/start/lualine.nvim",
+    path = "/home/organ1sm/.local/share/nvim/site/pack/packer/start/lualine.nvim",
     url = "https://github.com/hoob3rt/lualine.nvim"
   },
   ["null-ls.nvim"] = {
     config = { " require('plugins/null-ls-nvim') " },
     loaded = true,
-    path = "/home/wandsx/.local/share/nvim/site/pack/packer/start/null-ls.nvim",
+    path = "/home/organ1sm/.local/share/nvim/site/pack/packer/start/null-ls.nvim",
     url = "https://github.com/jose-elias-alvarez/null-ls.nvim"
   },
   ["nvim-autopairs"] = {
     config = { " require('plugins/nvim-autopairs') " },
     loaded = true,
-    path = "/home/wandsx/.local/share/nvim/site/pack/packer/start/nvim-autopairs",
+    path = "/home/organ1sm/.local/share/nvim/site/pack/packer/start/nvim-autopairs",
     url = "https://github.com/windwp/nvim-autopairs"
   },
   ["nvim-bufferline.lua"] = {
     config = { " require('plugins/nvim-bufferline') " },
     loaded = true,
-    path = "/home/wandsx/.local/share/nvim/site/pack/packer/start/nvim-bufferline.lua",
+    path = "/home/organ1sm/.local/share/nvim/site/pack/packer/start/nvim-bufferline.lua",
     url = "https://github.com/akinsho/nvim-bufferline.lua"
   },
   ["nvim-cmp"] = {
     config = { " require('plugins/nvim-cmp') " },
     loaded = true,
-    path = "/home/wandsx/.local/share/nvim/site/pack/packer/start/nvim-cmp",
+    path = "/home/organ1sm/.local/share/nvim/site/pack/packer/start/nvim-cmp",
     url = "https://github.com/hrsh7th/nvim-cmp"
   },
   ["nvim-colorizer.lua"] = {
     config = { " require('plugins/colorizer-nvim') " },
     loaded = true,
-    path = "/home/wandsx/.local/share/nvim/site/pack/packer/start/nvim-colorizer.lua",
+    path = "/home/organ1sm/.local/share/nvim/site/pack/packer/start/nvim-colorizer.lua",
     url = "https://github.com/norcalli/nvim-colorizer.lua"
   },
   ["nvim-lsp-installer"] = {
     config = { " require('lsp/nvim-lsp-installer') " },
     loaded = true,
-    path = "/home/wandsx/.local/share/nvim/site/pack/packer/start/nvim-lsp-installer",
+    path = "/home/organ1sm/.local/share/nvim/site/pack/packer/start/nvim-lsp-installer",
     url = "https://github.com/williamboman/nvim-lsp-installer"
   },
   ["nvim-lspconfig"] = {
     config = { " require('lsp/nvim-lsp-config') " },
     loaded = true,
-    path = "/home/wandsx/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
+    path = "/home/organ1sm/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
   },
   ["nvim-tree.lua"] = {
     config = { " require('plugins/nvim-tree') " },
     loaded = true,
-    path = "/home/wandsx/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
+    path = "/home/organ1sm/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
     url = "https://github.com/kyazdani42/nvim-tree.lua"
   },
   ["nvim-treesitter"] = {
     config = { " require('plugins/nvim-treesitter') " },
     loaded = true,
-    path = "/home/wandsx/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
+    path = "/home/organ1sm/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
   ["nvim-web-devicons"] = {
     config = { " require('plugins/nvim-web-devicons') " },
     loaded = true,
-    path = "/home/wandsx/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
+    path = "/home/organ1sm/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
     url = "https://github.com/kyazdani42/nvim-web-devicons"
   },
   ["onedark.nvim"] = {
     config = { " require ('plugins/onedark-theme') " },
     loaded = false,
     needs_bufread = false,
-    path = "/home/wandsx/.local/share/nvim/site/pack/packer/opt/onedark.nvim",
+    path = "/home/organ1sm/.local/share/nvim/site/pack/packer/opt/onedark.nvim",
     url = "https://github.com/navarasu/onedark.nvim"
   },
   ["onedarkpro.nvim"] = {
     config = { ' require("plugins/onedarkpro-theme") ' },
     loaded = true,
-    path = "/home/wandsx/.local/share/nvim/site/pack/packer/start/onedarkpro.nvim",
+    path = "/home/organ1sm/.local/share/nvim/site/pack/packer/start/onedarkpro.nvim",
     url = "https://github.com/olimorris/onedarkpro.nvim"
   },
   ["packer.nvim"] = {
     loaded = true,
-    path = "/home/wandsx/.local/share/nvim/site/pack/packer/start/packer.nvim",
+    path = "/home/organ1sm/.local/share/nvim/site/pack/packer/start/packer.nvim",
     url = "https://github.com/wbthomason/packer.nvim"
   },
   playground = {
     loaded = true,
-    path = "/home/wandsx/.local/share/nvim/site/pack/packer/start/playground",
+    path = "/home/organ1sm/.local/share/nvim/site/pack/packer/start/playground",
     url = "https://github.com/nvim-treesitter/playground"
   },
   ["plenary.nvim"] = {
     loaded = true,
-    path = "/home/wandsx/.local/share/nvim/site/pack/packer/start/plenary.nvim",
+    path = "/home/organ1sm/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
   ["popup.nvim"] = {
     loaded = true,
-    path = "/home/wandsx/.local/share/nvim/site/pack/packer/start/popup.nvim",
+    path = "/home/organ1sm/.local/share/nvim/site/pack/packer/start/popup.nvim",
     url = "https://github.com/nvim-lua/popup.nvim"
   },
   ["surround.nvim"] = {
     config = { " require('plugins/surround-nvim') " },
     loaded = true,
-    path = "/home/wandsx/.local/share/nvim/site/pack/packer/start/surround.nvim",
+    path = "/home/organ1sm/.local/share/nvim/site/pack/packer/start/surround.nvim",
     url = "https://github.com/blackcauldron7/surround.nvim"
   },
   ["telescope-fzf-native.nvim"] = {
     loaded = true,
-    path = "/home/wandsx/.local/share/nvim/site/pack/packer/start/telescope-fzf-native.nvim",
+    path = "/home/organ1sm/.local/share/nvim/site/pack/packer/start/telescope-fzf-native.nvim",
     url = "https://github.com/nvim-telescope/telescope-fzf-native.nvim"
   },
   ["telescope.nvim"] = {
     config = { " require('plugins/telescope-nvim') " },
     loaded = true,
-    path = "/home/wandsx/.local/share/nvim/site/pack/packer/start/telescope.nvim",
+    path = "/home/organ1sm/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
   ["vim-floaterm"] = {
     config = { " require('plugins/vim-floaterm') " },
     loaded = true,
-    path = "/home/wandsx/.local/share/nvim/site/pack/packer/start/vim-floaterm",
+    path = "/home/organ1sm/.local/share/nvim/site/pack/packer/start/vim-floaterm",
     url = "https://github.com/voldikss/vim-floaterm"
+  },
+  ["which-key.nvim"] = {
+    config = { "\27LJ\1\2;\0\0\2\0\3\0\a4\0\0\0%\1\1\0>\0\2\0027\0\2\0002\1\0\0>\0\2\1G\0\1\0\nsetup\14which-key\frequire\0" },
+    loaded = true,
+    path = "/home/organ1sm/.local/share/nvim/site/pack/packer/start/which-key.nvim",
+    url = "https://github.com/folke/which-key.nvim"
   }
 }
 
@@ -279,6 +285,10 @@ time([[Config for nvim-treesitter]], false)
 time([[Config for AutoSave.nvim]], true)
  require ('plugins/autoSave-nvim')
 time([[Config for AutoSave.nvim]], false)
+-- Config for: which-key.nvim
+time([[Config for which-key.nvim]], true)
+try_loadstring("\27LJ\1\2;\0\0\2\0\3\0\a4\0\0\0%\1\1\0>\0\2\0027\0\2\0002\1\0\0>\0\2\1G\0\1\0\nsetup\14which-key\frequire\0", "config", "which-key.nvim")
+time([[Config for which-key.nvim]], false)
 -- Config for: alpha-nvim
 time([[Config for alpha-nvim]], true)
  require('plugins/alpha-nvim') 
@@ -303,14 +313,14 @@ time([[Config for telescope.nvim]], false)
 time([[Config for nvim-web-devicons]], true)
  require('plugins/nvim-web-devicons') 
 time([[Config for nvim-web-devicons]], false)
--- Config for: vim-floaterm
-time([[Config for vim-floaterm]], true)
- require('plugins/vim-floaterm') 
-time([[Config for vim-floaterm]], false)
 -- Config for: surround.nvim
 time([[Config for surround.nvim]], true)
  require('plugins/surround-nvim') 
 time([[Config for surround.nvim]], false)
+-- Config for: nvim-cmp
+time([[Config for nvim-cmp]], true)
+ require('plugins/nvim-cmp') 
+time([[Config for nvim-cmp]], false)
 -- Config for: lsp-status.nvim
 time([[Config for lsp-status.nvim]], true)
  require('lsp/lsp-status') 
@@ -327,14 +337,14 @@ time([[Config for lspkind-nvim]], false)
 time([[Config for onedarkpro.nvim]], true)
  require("plugins/onedarkpro-theme") 
 time([[Config for onedarkpro.nvim]], false)
+-- Config for: vim-floaterm
+time([[Config for vim-floaterm]], true)
+ require('plugins/vim-floaterm') 
+time([[Config for vim-floaterm]], false)
 -- Config for: nvim-lspconfig
 time([[Config for nvim-lspconfig]], true)
  require('lsp/nvim-lsp-config') 
 time([[Config for nvim-lspconfig]], false)
--- Config for: nvim-cmp
-time([[Config for nvim-cmp]], true)
- require('plugins/nvim-cmp') 
-time([[Config for nvim-cmp]], false)
 -- Config for: nvim-lsp-installer
 time([[Config for nvim-lsp-installer]], true)
  require('lsp/nvim-lsp-installer') 

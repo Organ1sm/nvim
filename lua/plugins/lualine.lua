@@ -18,7 +18,6 @@ local colors = {
     darkgray = '#1A1C23',
     lightgray = '#2E303E',
     inactivegray = '#1C1E26',
-    yellow = '#ECBE7B',
     cyan = '#008080',
     darkblue = '#081633',
     orange = '#FF8800',
@@ -89,24 +88,13 @@ require'lualine'.setup {
 
     sections = {
         lualine_a = {
-            {'mode', right_padding = 1, left_padding = 1, component_separators = ''},
+            {'mode', right_padding = 0, left_padding = 0, component_separators = ''},
             {
                 'branch',
                 -- icon = '',
                 condition = conditions.check_git_workspace,
                 right_padding = 1,
                 component_separators = ''
-            },
-            {
-                'diff',
-                symbols = {added = '+', modified = '~', removed = '-'},
-                diff_color = {
-                    added = colors.green, -- Changes the diff's added color
-                    modified = colors.orange, -- Changes the diff's modified color
-                    removed = colors.red -- Changes the diff's removed color you
-                },
-                condition = conditions.hide_in_width,
-                right_padding = 1
             }
         },
 
@@ -141,8 +129,8 @@ require'lualine'.setup {
             {
                 getLspServerName,
                 color = {fg = colors.white, gui = 'bold'},
-                left_padding = 1, -- adds padding to the left of components
-                right_padding = 1, -- adds padding to the right of components
+                left_padding = 0, -- adds padding to the left of components
+                right_padding = 0, -- adds padding to the right of components
                 component_separators = {left = '', right = ''}
             }
 
@@ -151,16 +139,16 @@ require'lualine'.setup {
         lualine_y = {
             {
                 'encoding',
-                component_separators = {left = '', right = '|'},
+                component_separators = {left = '', right = ''},
                 left_padding = 1, -- adds padding to the right of components
-                right_padding = 1
+                right_padding = 0
             },
             {
                 'fileformat',
                 upper = true,
                 icons_enabled = true,
-                left_padding = 1, -- adds padding to the right of components
-                component_separators = {left = "", right = "|"}
+                left_padding = 0, -- adds padding to the right of components
+                component_separators = {left = "", right = ""}
             },
             {
                 'filetype',
@@ -170,7 +158,6 @@ require'lualine'.setup {
         },
 
         lualine_z = {
-            {'progress', component_separators = {left = '', right = ''}, left_padding = 0},
             {'location', right_padding = 1, icon = ''}
         }
     },

@@ -110,3 +110,12 @@ vim.o.pumheight = 10
 -- always show tabline
 vim.o.showtabline = 2
 
+-- don't auto commenting new lines
+cmd([[au BufEnter * set fo-=c fo-=r fo-=o]])
+
+-- jump to the last position when reopening a file
+cmd([[
+	if has("autocmd")
+		au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
+	endif
+]])

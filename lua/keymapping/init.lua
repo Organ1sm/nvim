@@ -1,5 +1,5 @@
---                          Author:    Organ1sm
---                          Github:    github.com/Organ1sm 
+--  Author:    Organ1sm
+--  Github:    github.com/Organ1sm
 -- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ --
 -- ━━━━━━━━━━━━━❰ Plugin-Independent Mapping ❱━━━━━━━━━━━━━ --
 -- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ --

@@ -129,6 +129,7 @@ return require('packer').startup(function()
     --     'folke/trouble.nvim',
     --     config = [[ require('plugins/trouble_nvim') ]]
     -- }
+    use {"folke/which-key.nvim", config = function() require("which-key").setup {} end}
 
     use { -- A snazzy bufferline for Neovim
         'akinsho/nvim-bufferline.lua',

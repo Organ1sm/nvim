@@ -1,13 +1,10 @@
---                          Author:     Organ1sm
---                          Github:     github.com/Organ1sm
+--    Author:     Organ1sm
+--    Github:     github.com/Organ1sm
 -- ───────────────────────────────────────────────── --
--- ────────────────❰ Leader Mapping ❱─────────────── --
 -- mapping leader here. it will work for every mapped
 vim.g.mapleader = ' '
 vim.g.maplocalleader = '|'
--- ───────────────────────────────────────────────── --
 
--- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ --
 -- ━━━━━━━━━━━━━❰ Load/Source Configs ❱━━━━━━━━━━━━━ --
 
 -- plugin config to improve start-up time.
@@ -17,11 +14,6 @@ vim.g.maplocalleader = '|'
 
 require('basicConfig') -- plugin independent configs
 require('keymapping')
-
--- load/source PLUGINS CONFIGS
--- loading plugins and its configs are managed in seperate config file
--- ~/.config/nvim/lua/plugins/packer_nvim.lua
--- NOTE: laways load plugins at last
 require('plugins')
 
 -- ━━━━━━━━━━━━━━━━━❰ end of Load ❱━━━━━━━━━━━━━━━━━ --
