@@ -9,7 +9,7 @@ local options = {noremap = true, silent = true}
 local silent = {silent = true}
 
 -- to quit vim
-keymap('n', '<Leader>q', ':wq<CR>', options)
+keymap('n', '<leader>Q', ':wq<cr>', options)
 
 -- scroll window up/down
 keymap('i', '<C-e>', '<ESC><C-e>', silent)
@@ -39,6 +39,9 @@ keymap("n", "<C-h>", "<C-w>h", options)
 keymap("n", "<C-j>", "<C-w>j", options)
 keymap("n", "<C-k>", "<C-w>k", options)
 keymap("n", "<C-l>", "<C-w>l", options)
+keymap("i", "z;", "<Esc>A;", options)
+keymap("n", "z;", "A;", options)
+
 
 -- ================= Telescope -==============================
 -- ===========================================================

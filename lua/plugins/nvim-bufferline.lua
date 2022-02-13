@@ -96,6 +96,9 @@ keymap('n', '<Leader>,', ':BufferLineMovePrev<CR>', options)
 -- Magic buffer-picking mode
 keymap('n', '<Leader>?', ':BufferLinePick<CR>', options)
 
+-- close bufferline
+keymap("n", "<Leader>q", ":BufferLinePickClose<CR>", options)
+
 -- go to buffer number
 keymap('n', '<Leader>1', ':BufferLineGoToBuffer 1<CR>', options)
 keymap('n', '<Leader>2', ':BufferLineGoToBuffer 2<CR>', options)
