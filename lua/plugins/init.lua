@@ -137,6 +137,8 @@ return require('packer').startup(function()
         config = [[ require('plugins/nvim-bufferline') ]]
     }
 
+    use {'simrat39/symbols-outline.nvim', config = [[ require('plugins/symbols-outline') ]]}
+
     use { -- A File Explorer For Neovim Written In Lua
         'kyazdani42/nvim-tree.lua',
         config = [[ require('plugins/nvim-tree') ]]

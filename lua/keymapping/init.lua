@@ -7,6 +7,7 @@ local keymap = vim.api.nvim_set_keymap
 local cmd = vim.cmd
 local options = {noremap = true, silent = true}
 local silent = {silent = true}
+local function mapcmd(key, cmd) vim.api.nvim_set_keymap('n', key, ':' .. cmd .. '<cr>', {noremap = true}) end
 
 -- to quit vim
 keymap('n', '<leader>Q', ':wq<cr>', options)
@@ -22,7 +23,7 @@ keymap('i', '<C-y>', '<ESC><C-y>', silent)
 
 -- clear Search Results
 keymap('n', '//', ':noh <CR>', silent)
-
+mapcmd('<leader>bd', 'Bdelete')
 keymap('n', 'H', "^", options)
 keymap('n', 'L', "$", options)
 keymap("n", "sv", ":vsp<CR>", options)
@@ -42,10 +43,8 @@ keymap("n", "<C-l>", "<C-w>l", options)
 keymap("i", "z;", "<Esc>A;", options)
 keymap("n", "z;", "A;", options)
 
-
 -- ================= Telescope -==============================
 -- ===========================================================
-
 keymap("n", "<Leader>ff", "<cmd>lua require('telescope.builtin').find_files()<cr>", options)
 keymap("n", "<Leader>fg", "<cmd>lua require('telescope.builtin').live_grep()<cr>", options)
 keymap("n", "<Leader>fb", "<cmd>lua require('telescope.builtin').buffers()<cr>", options)
