@@ -20,7 +20,16 @@ end
 return require('packer').startup(function()
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
+    -- Improve Start-UP time
+    use { -- Speed up loading Lua modules in Neovim to improve startup time.
+        'lewis6991/impatient.nvim',
+        config = [[require('plugins/impatient-nvim')]]
+    }
 
+    use { -- Easily speed up your neovim startup time!. A faster version of filetype.vim
+        'nathom/filetype.nvim',
+        config = [[ require('plugins/filetype-nvim')]]
+    }
     -- =====================================================================================================
     -- ====================================== lsp ==========================================================
     -- A collection of common configurations for Neovim's built-in language server client
@@ -43,6 +52,16 @@ return require('packer').startup(function()
         requires = {'nvim-treesitter/playground', opt = true},
         run = ':TSUpdate',
         config = [[ require('plugins/nvim-treesitter') ]]
+
+    }
+    use {"p00f/nvim-ts-rainbow", after = "nvim-treesitter", requires = {"nvim-treesitter"}}
+
+    use { -- Sippet Engine for Neovim written in Lua.
+        'L3MON4D3/LuaSnip',
+        requires = {
+            "rafamadriz/friendly-snippets" -- Snippets collection for a set of different programming languages for faster development.
+        },
+        config = [[ require('plugins/LuaSnip') ]]
     }
 
     use { -- A completion plugin for neovim coded in Lua.
@@ -56,6 +75,7 @@ return require('packer').startup(function()
     use {'hrsh7th/cmp-path'} -- { name = 'path' }
     use {'hrsh7th/cmp-cmdline'} -- { name = 'cmdline' }
     use {"hrsh7th/cmp-emoji"}
+    use {"saadparwaiz1/cmp_luasnip"} -- luasnip completion source for nvim-cmp
 
     use { -- A super powerful autopairs for Neovim. It support multiple character.
         'windwp/nvim-autopairs',
@@ -82,10 +102,7 @@ return require('packer').startup(function()
         config = [[ require('plugins/nvim-web-devicons') ]]
     }
 
-    -- use { -- Maximizes and restores the current window in Vim
-    --     'szw/vim-maximizer',
-    --     config = [[ require('plugins/vim-maximizer') ]]
-    -- }
+    use {"skywind3000/asyncrun.vim", cmd = {"AsyncRun", "AsyncStop"}}
 
     use { -- Smart and powerful comment plugin for neovim. Supports commentstring, dot repeat, left-right/up-down motions, hooks, and more
         'numToStr/Comment.nvim',

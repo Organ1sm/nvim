@@ -22,8 +22,8 @@ keymap('i', '<C-y>', '<ESC><C-y>', silent)
 -- keymap('n', '<C-l>', 'zl', silent) -- right
 
 -- clear Search Results
+mapcmd('<leader>bd', 'bdelete')
 keymap('n', '//', ':noh <CR>', silent)
-mapcmd('<leader>bd', 'Bdelete')
 keymap('n', 'H', "^", options)
 keymap('n', 'L', "$", options)
 keymap("n", "sv", ":vsp<CR>", options)
@@ -51,7 +51,7 @@ keymap("n", "<Leader>fb", "<cmd>lua require('telescope.builtin').buffers()<cr>",
 keymap("n", "<Leader>fh", "<cmd>lua require('telescope.builtin').help_tags()<cr>", options)
 keymap('n', "<leader>M", "<cmd>lua require('telescope.builtin').keymaps() <CR>", options)
 
--- =================== format ====================================
-keymap('n', '<Leader>fm', '<cmd>lua vim.lsp.buf.formatting()<CR>', options)
+-- symboloutlie 
+keymap('n', '<Leader>sb', '<cmd>:SymbolsOutline<cr>', options)
 
-cmd([[ :nnoremap <c-z> <nop><CR> ]])
+cmd([[ :nnoremap <c-z> <nop><cr> ]])
