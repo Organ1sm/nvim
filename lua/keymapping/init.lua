@@ -51,7 +51,16 @@ keymap("n", "<Leader>fb", "<cmd>lua require('telescope.builtin').buffers()<cr>",
 keymap("n", "<Leader>fh", "<cmd>lua require('telescope.builtin').help_tags()<cr>", options)
 keymap('n', "<leader>M", "<cmd>lua require('telescope.builtin').keymaps() <CR>", options)
 
--- symboloutlie 
+-- ====================== symbol-outlie ============================================ --
 keymap('n', '<Leader>sb', '<cmd>:SymbolsOutline<cr>', options)
+
+-- ====================== AsyncTask ================================================ --
+
+vim.g.asyncrun_open = 10
+vim.g.asynctasks_term_pos = "tab"
+vim.g.asynctasks_extra_config = {"~/.config/nvim/AsyncTasks.ini"}
+
+keymap('n', '<F5>', ":AsyncTask file-run<cr>", options)
+keymap('n', '<F9>', ":AsyncTask file-build<cr>", options)
 
 cmd([[ :nnoremap <c-z> <nop><cr> ]])

@@ -92,6 +92,9 @@ return require('packer').startup(function()
         config = [[ require('plugins/telescope-nvim') ]]
     }
 
+    use {'skywind3000/asyncrun.vim'}
+    use {'skywind3000/asynctasks.vim'}
+
     use { -- Use (neo)vim terminal in the floating/popup window.
         'voldikss/vim-floaterm',
         config = [[ require('plugins/vim-floaterm') ]]
@@ -101,8 +104,6 @@ return require('packer').startup(function()
         'kyazdani42/nvim-web-devicons',
         config = [[ require('plugins/nvim-web-devicons') ]]
     }
-
-    use {"skywind3000/asyncrun.vim", cmd = {"AsyncRun", "AsyncStop"}}
 
     use { -- Smart and powerful comment plugin for neovim. Supports commentstring, dot repeat, left-right/up-down motions, hooks, and more
         'numToStr/Comment.nvim',

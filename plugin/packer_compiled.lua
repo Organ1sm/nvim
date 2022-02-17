@@ -81,11 +81,27 @@ _G.packer_plugins = {
     path = "/home/organ1sm/.local/share/nvim/site/pack/packer/start/Comment.nvim",
     url = "https://github.com/numToStr/Comment.nvim"
   },
+  LuaSnip = {
+    config = { " require('plugins/LuaSnip') " },
+    loaded = true,
+    path = "/home/organ1sm/.local/share/nvim/site/pack/packer/start/LuaSnip",
+    url = "https://github.com/L3MON4D3/LuaSnip"
+  },
   ["alpha-nvim"] = {
     config = { " require('plugins/alpha-nvim') " },
     loaded = true,
     path = "/home/organ1sm/.local/share/nvim/site/pack/packer/start/alpha-nvim",
     url = "https://github.com/goolord/alpha-nvim"
+  },
+  ["asyncrun.vim"] = {
+    loaded = true,
+    path = "/home/organ1sm/.local/share/nvim/site/pack/packer/start/asyncrun.vim",
+    url = "https://github.com/skywind3000/asyncrun.vim"
+  },
+  ["asynctasks.vim"] = {
+    loaded = true,
+    path = "/home/organ1sm/.local/share/nvim/site/pack/packer/start/asynctasks.vim",
+    url = "https://github.com/skywind3000/asynctasks.vim"
   },
   ["cmp-buffer"] = {
     loaded = true,
@@ -117,12 +133,34 @@ _G.packer_plugins = {
     path = "/home/organ1sm/.local/share/nvim/site/pack/packer/start/cmp-path",
     url = "https://github.com/hrsh7th/cmp-path"
   },
+  cmp_luasnip = {
+    loaded = true,
+    path = "/home/organ1sm/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
+    url = "https://github.com/saadparwaiz1/cmp_luasnip"
+  },
+  ["filetype.nvim"] = {
+    config = { " require('plugins/filetype-nvim')" },
+    loaded = true,
+    path = "/home/organ1sm/.local/share/nvim/site/pack/packer/start/filetype.nvim",
+    url = "https://github.com/nathom/filetype.nvim"
+  },
+  ["friendly-snippets"] = {
+    loaded = true,
+    path = "/home/organ1sm/.local/share/nvim/site/pack/packer/start/friendly-snippets",
+    url = "https://github.com/rafamadriz/friendly-snippets"
+  },
   ["github-nvim-theme"] = {
     config = { " require('plugins/github-nvim-theme') " },
     loaded = false,
     needs_bufread = false,
     path = "/home/organ1sm/.local/share/nvim/site/pack/packer/opt/github-nvim-theme",
     url = "https://github.com/projekt0n/github-nvim-theme"
+  },
+  ["impatient.nvim"] = {
+    config = { "require('plugins/impatient-nvim')" },
+    loaded = true,
+    path = "/home/organ1sm/.local/share/nvim/site/pack/packer/start/impatient.nvim",
+    url = "https://github.com/lewis6991/impatient.nvim"
   },
   ["lsp-status.nvim"] = {
     config = { " require('lsp/lsp-status') " },
@@ -197,10 +235,16 @@ _G.packer_plugins = {
     url = "https://github.com/kyazdani42/nvim-tree.lua"
   },
   ["nvim-treesitter"] = {
-    config = { " require('plugins/nvim-treesitter') " },
+    after = { "nvim-ts-rainbow" },
     loaded = true,
-    path = "/home/organ1sm/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
-    url = "https://github.com/nvim-treesitter/nvim-treesitter"
+    only_config = true
+  },
+  ["nvim-ts-rainbow"] = {
+    load_after = {},
+    loaded = true,
+    needs_bufread = false,
+    path = "/home/organ1sm/.local/share/nvim/site/pack/packer/opt/nvim-ts-rainbow",
+    url = "https://github.com/p00f/nvim-ts-rainbow"
   },
   ["nvim-web-devicons"] = {
     config = { " require('plugins/nvim-web-devicons') " },
@@ -247,6 +291,12 @@ _G.packer_plugins = {
     path = "/home/organ1sm/.local/share/nvim/site/pack/packer/start/surround.nvim",
     url = "https://github.com/blackcauldron7/surround.nvim"
   },
+  ["symbols-outline.nvim"] = {
+    config = { " require('plugins/symbols-outline') " },
+    loaded = true,
+    path = "/home/organ1sm/.local/share/nvim/site/pack/packer/start/symbols-outline.nvim",
+    url = "https://github.com/simrat39/symbols-outline.nvim"
+  },
   ["telescope-fzf-native.nvim"] = {
     loaded = true,
     path = "/home/organ1sm/.local/share/nvim/site/pack/packer/start/telescope-fzf-native.nvim",
@@ -281,26 +331,38 @@ time([[Config for lsp_signature.nvim]], false)
 time([[Config for nvim-treesitter]], true)
  require('plugins/nvim-treesitter') 
 time([[Config for nvim-treesitter]], false)
--- Config for: AutoSave.nvim
-time([[Config for AutoSave.nvim]], true)
- require ('plugins/autoSave-nvim')
-time([[Config for AutoSave.nvim]], false)
--- Config for: which-key.nvim
-time([[Config for which-key.nvim]], true)
-try_loadstring("\27LJ\1\2;\0\0\2\0\3\0\a4\0\0\0%\1\1\0>\0\2\0027\0\2\0002\1\0\0>\0\2\1G\0\1\0\nsetup\14which-key\frequire\0", "config", "which-key.nvim")
-time([[Config for which-key.nvim]], false)
--- Config for: alpha-nvim
-time([[Config for alpha-nvim]], true)
- require('plugins/alpha-nvim') 
-time([[Config for alpha-nvim]], false)
+-- Config for: vim-floaterm
+time([[Config for vim-floaterm]], true)
+ require('plugins/vim-floaterm') 
+time([[Config for vim-floaterm]], false)
+-- Config for: symbols-outline.nvim
+time([[Config for symbols-outline.nvim]], true)
+ require('plugins/symbols-outline') 
+time([[Config for symbols-outline.nvim]], false)
+-- Config for: impatient.nvim
+time([[Config for impatient.nvim]], true)
+require('plugins/impatient-nvim')
+time([[Config for impatient.nvim]], false)
 -- Config for: lualine.nvim
 time([[Config for lualine.nvim]], true)
  require('plugins/lualine') 
 time([[Config for lualine.nvim]], false)
+-- Config for: which-key.nvim
+time([[Config for which-key.nvim]], true)
+try_loadstring("\27LJ\1\2;\0\0\2\0\3\0\a4\0\0\0%\1\1\0>\0\2\0027\0\2\0002\1\0\0>\0\2\1G\0\1\0\nsetup\14which-key\frequire\0", "config", "which-key.nvim")
+time([[Config for which-key.nvim]], false)
+-- Config for: surround.nvim
+time([[Config for surround.nvim]], true)
+ require('plugins/surround-nvim') 
+time([[Config for surround.nvim]], false)
 -- Config for: nvim-autopairs
 time([[Config for nvim-autopairs]], true)
  require('plugins/nvim-autopairs') 
 time([[Config for nvim-autopairs]], false)
+-- Config for: nvim-web-devicons
+time([[Config for nvim-web-devicons]], true)
+ require('plugins/nvim-web-devicons') 
+time([[Config for nvim-web-devicons]], false)
 -- Config for: nvim-bufferline.lua
 time([[Config for nvim-bufferline.lua]], true)
  require('plugins/nvim-bufferline') 
@@ -309,42 +371,46 @@ time([[Config for nvim-bufferline.lua]], false)
 time([[Config for telescope.nvim]], true)
  require('plugins/telescope-nvim') 
 time([[Config for telescope.nvim]], false)
--- Config for: nvim-web-devicons
-time([[Config for nvim-web-devicons]], true)
- require('plugins/nvim-web-devicons') 
-time([[Config for nvim-web-devicons]], false)
--- Config for: surround.nvim
-time([[Config for surround.nvim]], true)
- require('plugins/surround-nvim') 
-time([[Config for surround.nvim]], false)
--- Config for: nvim-cmp
-time([[Config for nvim-cmp]], true)
- require('plugins/nvim-cmp') 
-time([[Config for nvim-cmp]], false)
--- Config for: lsp-status.nvim
-time([[Config for lsp-status.nvim]], true)
- require('lsp/lsp-status') 
-time([[Config for lsp-status.nvim]], false)
+-- Config for: alpha-nvim
+time([[Config for alpha-nvim]], true)
+ require('plugins/alpha-nvim') 
+time([[Config for alpha-nvim]], false)
 -- Config for: nvim-tree.lua
 time([[Config for nvim-tree.lua]], true)
  require('plugins/nvim-tree') 
 time([[Config for nvim-tree.lua]], false)
--- Config for: lspkind-nvim
-time([[Config for lspkind-nvim]], true)
- require('lsp/lspkind-nvim') 
-time([[Config for lspkind-nvim]], false)
 -- Config for: onedarkpro.nvim
 time([[Config for onedarkpro.nvim]], true)
  require("plugins/onedarkpro-theme") 
 time([[Config for onedarkpro.nvim]], false)
--- Config for: vim-floaterm
-time([[Config for vim-floaterm]], true)
- require('plugins/vim-floaterm') 
-time([[Config for vim-floaterm]], false)
+-- Config for: AutoSave.nvim
+time([[Config for AutoSave.nvim]], true)
+ require ('plugins/autoSave-nvim')
+time([[Config for AutoSave.nvim]], false)
+-- Config for: lsp-status.nvim
+time([[Config for lsp-status.nvim]], true)
+ require('lsp/lsp-status') 
+time([[Config for lsp-status.nvim]], false)
+-- Config for: nvim-colorizer.lua
+time([[Config for nvim-colorizer.lua]], true)
+ require('plugins/colorizer-nvim') 
+time([[Config for nvim-colorizer.lua]], false)
+-- Config for: lspkind-nvim
+time([[Config for lspkind-nvim]], true)
+ require('lsp/lspkind-nvim') 
+time([[Config for lspkind-nvim]], false)
 -- Config for: nvim-lspconfig
 time([[Config for nvim-lspconfig]], true)
  require('lsp/nvim-lsp-config') 
 time([[Config for nvim-lspconfig]], false)
+-- Config for: nvim-cmp
+time([[Config for nvim-cmp]], true)
+ require('plugins/nvim-cmp') 
+time([[Config for nvim-cmp]], false)
+-- Config for: filetype.nvim
+time([[Config for filetype.nvim]], true)
+ require('plugins/filetype-nvim')
+time([[Config for filetype.nvim]], false)
 -- Config for: nvim-lsp-installer
 time([[Config for nvim-lsp-installer]], true)
  require('lsp/nvim-lsp-installer') 
@@ -357,14 +423,19 @@ time([[Config for Comment.nvim]], false)
 time([[Config for null-ls.nvim]], true)
  require('plugins/null-ls-nvim') 
 time([[Config for null-ls.nvim]], false)
--- Config for: nvim-colorizer.lua
-time([[Config for nvim-colorizer.lua]], true)
- require('plugins/colorizer-nvim') 
-time([[Config for nvim-colorizer.lua]], false)
+-- Config for: LuaSnip
+time([[Config for LuaSnip]], true)
+ require('plugins/LuaSnip') 
+time([[Config for LuaSnip]], false)
+-- Load plugins in order defined by `after`
+time([[Sequenced loading]], true)
+vim.cmd [[ packadd nvim-ts-rainbow ]]
+time([[Sequenced loading]], false)
 if should_profile then save_profiles() end
 
 end)
 
 if not no_errors then
+  error_msg = error_msg:gsub('"', '\\"')
   vim.api.nvim_command('echohl ErrorMsg | echom "Error in packer_compiled: '..error_msg..'" | echom "Please check your config for correctness" | echohl None')
 end
