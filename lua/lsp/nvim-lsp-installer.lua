@@ -20,7 +20,10 @@ lsp_installer.settings {
 local function make_server_ready(attach)
     lsp_installer.on_server_ready(function(server)
         local opts = {}
-        local capabilities = {}
+        -- local capabilities = {}
+        local capabilities = vim.lsp.protocol.make_client_capabilities()
+        capabilities = require("cmp_nvim_lsp").update_capabilities(capabilities)
+        capabilities.textDocument.completion.completionItem.snippetSupport = true
 
         opts.on_attach = attach
         -- for lua
@@ -36,7 +39,7 @@ local function make_server_ready(attach)
             -- opts.init_options = settings.init_options
             opts.cmd = settings.cmd
             opts.filetypes = settings.filetypes
-            capabilities = vim.lsp.protocol.make_client_capabilities()
+            -- capabilities = vim.lsp.protocol.make_client_capabilities()
             capabilities.offsetEncoding = {"utf-16"}
         end
 

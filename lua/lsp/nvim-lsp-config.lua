@@ -76,6 +76,7 @@ M.On_attach = function(client, bufnr)
     -- ref: https://github.com/jose-elias-alvarez/null-ls.nvim/wiki/Avoiding-LSP-formatting-conflicts
     client.resolved_capabilities.document_formatting = false
     client.resolved_capabilities.document_range_formatting = false
+
     --------------------------
     local signatureConfig = require("lsp.lsp-signature")
     require("lsp_signature").on_attach(signatureConfig)
