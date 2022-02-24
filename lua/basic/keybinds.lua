@@ -43,8 +43,8 @@ keymap("n", "<C-l>", "<C-w>l", options)
 keymap("i", "z;", "<Esc>A;", options)
 keymap("n", "z;", "A;", options)
 
--- ================= Telescope -==============================
--- ===========================================================
+-- ======================= Telescope ===============================
+-- =================================================================
 keymap("n", "<Leader>ff", "<cmd>lua require('telescope.builtin').find_files()<cr>", options)
 keymap("n", "<Leader>fg", "<cmd>lua require('telescope.builtin').live_grep()<cr>", options)
 keymap("n", "<Leader>fb", "<cmd>lua require('telescope.builtin').buffers()<cr>", options)

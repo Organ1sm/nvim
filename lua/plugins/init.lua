@@ -127,10 +127,7 @@ return require('packer').startup(function()
         config = [[ require('plugins/null-ls-nvim') ]]
         -- opt = true
     }
-    -- use {
-    --     'lukas-reineke/indent-blankline.nvim',
-    --     config = [[ require('plugins/indent-blankline-nvim') ]]
-    -- }
+    use {'lukas-reineke/indent-blankline.nvim', config = [[ require('plugins/indent-blankline-nvim') ]]}
 
     -- use { -- to change current working directory to project's root directory.
     --     'ygm2/rooter.nvim',

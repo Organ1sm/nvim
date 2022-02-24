@@ -1,22 +1,3 @@
--- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ --
--- ━━━━━━━━━━━━━❰ Plugin-Independent Configs ❱━━━━━━━━━━━━━ --
--- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ --
---[[
-	 NOTE:
-		every configs in this file are independent of any plugin
-		configs for plugins are in "lua/plugins" directory and each plugin has
-		it's own config file. some settings are already default in neovim so you
-		don't need to define explicitly but it won't make any difference
-    :end of NOTE
-]] --
-local exec = vim.api.nvim_exec -- execute Vimscript
-local set = vim.opt -- global options
-local cmd = vim.cmd -- execute Vim commands
--- local fn    = vim.fn            -- call Vim functions
--- local g     = vim.g             -- global variables
--- local b     = vim.bo            -- buffer-scoped options
--- local w     = vim.wo            -- windows-scoped options
-
 vim.g.encoding = "UTF-8"
 vim.o.fileencoding = 'utf-8'
 
@@ -110,12 +91,3 @@ vim.o.pumheight = 10
 -- always show tabline
 vim.o.showtabline = 2
 
--- don't auto commenting new lines
-cmd([[au BufEnter * set fo-=c fo-=r fo-=o]])
-
--- jump to the last position when reopening a file
-cmd([[
-	if has("autocmd")
-		au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
-	endif
-]])
