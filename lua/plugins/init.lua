@@ -114,7 +114,7 @@ return require('packer').startup(function()
     }
 
     use { -- A surround text object plugin for neovim written in lua.
-        'blackcauldron7/surround.nvim',
+        "ur4ltz/surround.nvim",
         config = [[ require('plugins/surround-nvim') ]]
     }
 
@@ -131,11 +131,7 @@ return require('packer').startup(function()
         -- opt = true
     }
     use {'lukas-reineke/indent-blankline.nvim', config = [[ require('plugins/indent-blankline-nvim') ]]}
-
-    -- use { -- to change current working directory to project's root directory.
-    --     'ygm2/rooter.nvim',
-    --     config = [[ require('plugins/rooter_nvim') ]]
-    -- }
+    use {"phaazon/hop.nvim", config = [[ require("plugins/hop-nvim") ]]}
 
     -- use { -- Git signs written in pure lua
     --     'lewis6991/gitsigns.nvim',
