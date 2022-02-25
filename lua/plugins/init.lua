@@ -118,6 +118,10 @@ return require('packer').startup(function()
         config = [[ require('plugins/surround-nvim') ]]
     }
 
+    use {"rmagatti/auto-session", config = [[ require("plugins/auto-session") ]]}
+
+    use {"ethanholz/nvim-lastplace", config = [[ require("plugins/nvim-lastplace") ]]}
+
     use { -- The fastest Neovim colorizer.
         'norcalli/nvim-colorizer.lua',
         config = [[ require('plugins/colorizer-nvim') ]]
