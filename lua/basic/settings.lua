@@ -1,5 +1,6 @@
 vim.g.encoding = "UTF-8"
 vim.o.fileencoding = 'utf-8'
+vim.o.encoding = "utf-8"
 
 vim.wo.number = true
 vim.wo.relativenumber = true
@@ -27,14 +28,22 @@ vim.o.smartindent = true
 vim.o.ignorecase = true
 vim.o.smartcase = true
 
--- 搜索不要高亮
-vim.o.hlsearch = false
+-- 搜索高亮
+vim.o.hlsearch = true
 
 -- 边输入边搜索
 vim.o.incsearch = true
 
 -- 使用增强状态栏后不再需要 vim 的模式提示
 vim.o.showmode = false
+vim.o.showcmd = true
+
+-- 是否开启代码折叠
+vim.o.foldenable = true
+-- 指定代码折叠的策略是按照缩进进行的
+vim.o.foldmethod = "indent"
+-- 指定代码折叠的最高层级为 100
+vim.o.foldlevel = 100
 
 -- 命令行高为2，提供足够的显示空间
 vim.o.cmdheight = 1
@@ -61,7 +70,7 @@ vim.o.backup = false
 vim.o.writebackup = false
 vim.o.swapfile = false
 
--- smaller updatetime 
+-- smaller updatetime
 vim.o.updatetime = 300
 
 -- 等待mappings
@@ -85,9 +94,12 @@ vim.o.listchars = "space:·"
 vim.o.wildmenu = true
 
 -- Dont' pass messages to |ins-completin menu|
-vim.o.shortmess = vim.o.shortmess .. 'c'
+vim.o.shortmess = vim.o.shortmess .. 'Sc'
 vim.o.pumheight = 10
 
 -- always show tabline
 vim.o.showtabline = 2
 
+vim.g.asyncrun_open = 10
+vim.g.asynctasks_term_pos = "tab"
+vim.g.asynctasks_extra_config = {"~/.config/nvim/AsyncTasks.ini"}

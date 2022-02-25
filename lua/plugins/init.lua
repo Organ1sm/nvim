@@ -9,6 +9,7 @@
 --              NOTE:1
 -- If you want to automatically ensure that packer.nvim is installed on any machine you clone your configuration to,
 -- add the following snippet (which is due to @Iron-E) somewhere in your config before your first usage of packer:
+--
 local execute = vim.api.nvim_command
 local fn = vim.fn
 local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
@@ -82,7 +83,9 @@ return require('packer').startup(function()
         config = [[ require('plugins/nvim-autopairs') ]]
     }
 
-    use { -- Find, Filter, Preview, Pick. All lua, all the time.  
+    use {'kevinhwang91/nvim-hlslens', config = [[ require("plugins/nvim-hlslens") ]]}
+
+    use { -- Find, Filter, Preview, Pick. All lua, all the time.
         'nvim-telescope/telescope.nvim',
         requires = {
             {'nvim-lua/popup.nvim'},

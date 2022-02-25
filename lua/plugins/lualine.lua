@@ -157,14 +157,12 @@ require'lualine'.setup {
             }
         },
 
-        lualine_z = {
-            {'location', right_padding = 1, icon = ''}
-        }
+        lualine_z = {{'location', right_padding = 1, icon = ''}}
     },
 
     inactive_sections = {
         lualine_a = {},
-        lualine_b = {},
+        lualine_b = {"branch"},
         lualine_c = {'filename'},
         lualine_x = {'location'},
         lualine_y = {},
