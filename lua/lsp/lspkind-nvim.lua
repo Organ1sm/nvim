@@ -4,7 +4,6 @@
 --   Github:      github.com/onsails/lspkind-nvim
 --   Description: vscode-like pictograms for neovim lsp completion items
 -- ───────────────────────────────────────────────── --
--- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ --
 -- ━━━━━━━━━━━━━━━━━━━❰ configs ❱━━━━━━━━━━━━━━━━━━━ --
 -- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ --
 require('lspkind').init({
@@ -14,7 +13,7 @@ require('lspkind').init({
     -- enables text annotations (default: 'default')
     -- default symbol map can be either 'default' or 'codicons' for codicon preset (requires vscode-codicons font installed)
     preset = 'codicons',
-    mode = "symbol_text", 
+    mode = "symbol_text",
     -- override preset symbols (default: {})
     symbol_map = {
         Text = '',

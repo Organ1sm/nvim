@@ -4,18 +4,16 @@
 --   Github:    github.com/projekt0n/github-nvim-theme
 -- ─────────────────────────────────────────────────--
 -- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
--- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
 -- ━━━━━━━━━━━━━━━━━━━❰ configs ❱━━━━━━━━━━━━━━━━━━━--
 -- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
 require("github-theme").setup({
-	theme_style = "dark",
-	keyword_style = 'None',
-	comment_style = "None",
-	dark_sidebar = "true",
-	-- other config
+    theme_style = "dark",
+    keyword_style = 'None',
+    comment_style = "None",
+    dark_sidebar = "true"
+    -- other config
 })
 
 -- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
 -- ━━━━━━━━━━━━━━━━━❰ end configs ❱━━━━━━━━━━━━━━━━━--
 -- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
-

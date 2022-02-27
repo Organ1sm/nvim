@@ -11,7 +11,6 @@ onedarkpro.setup({
     end,
 
     colors = {}, -- Override default colors. Can specify colors for "onelight" or "onedark" themes by passing in a table
-    hlgroups = {}, -- Override default highlight groups
     plugins = { -- Override which plugins highlight groups are loaded
         native_lsp = true,
         -- nvim_cmp = false,

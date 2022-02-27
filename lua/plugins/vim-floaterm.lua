@@ -14,7 +14,7 @@ local fn = vim.fn
 
 if fn.has("win32") or fn.has("win64") then
     vim.g.floaterm_shell = "pwsh"
-end 
+end
 
 -- Set floating window border line color to cyan, and background to orange
 vim.cmd("hi FloatermBorder guibg=none guifg=grey")
@@ -60,24 +60,6 @@ keymap('n', 'tn', ':FloatermNew<CR>', {noremap = true, silent = true})
 keymap('n', 'tq', ':FloatermKill<CR>', {noremap = true, silent = true})
 
 
--- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ --
--- ━━━━━━━━━━━━━━━❰ Build and Run ❱━━━━━━━━━━━━━━━━━ --
-
--- compile, run or compile and run program.
--- it depends on python script, https://github.com/shaeinst/lazy-builder. visit to know more.
-
--- local lazy_builder_py = "~/.local/share/nvim/custom_tools/lazy-builder/build.py"
--- local build_path = "~/.cache/build_files"
-
--- local run = ":w | :FloatermNew python " .. lazy_builder_py .. " -o " ..
--- 				            build_path .. " -r 1 % <CR>"
--- local build = ":w | :FloatermNew time python " .. lazy_builder_py .. " -o " ..
--- 				            build_path .. " -b 1 % <CR>"
--- local buildrun = ":w | :FloatermNew time python " .. lazy_builder_py .. " -o " ..
--- 							build_path .. " -br 1 % <CR>"
--- keymap('n', '<Leader>r', run, {noremap = true, silent = true}) -- Run
--- keymap('n', '<Leader>o', build, {noremap = true, silent = true}) -- build
--- keymap('n', '<Leader>O', buildrun, {noremap = true, silent = true}) -- build and run
 
 -- ━━━━━━━━━━━━━━━━❰ end Build/Run ❱━━━━━━━━━━━━━━━━ --
 -- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ --

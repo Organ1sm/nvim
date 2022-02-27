@@ -50,9 +50,14 @@ keymap("n", "<Leader>ff", "<cmd>lua require('telescope.builtin').find_files()<cr
 keymap("n", "<Leader>fg", "<cmd>lua require('telescope.builtin').live_grep()<cr>", options)
 keymap("n", "<Leader>fb", "<cmd>lua require('telescope.builtin').buffers()<cr>", options)
 keymap("n", "<Leader>fh", "<cmd>lua require('telescope.builtin').help_tags()<cr>", options)
-keymap('n', "<leader>M", "<cmd>lua require('telescope.builtin').keymaps() <CR>", options)
+keymap("n", "<Leader>fo", "<cmd>lua require('telescope.builtin').oldfiles()<cr>", options)
+keymap('n', "<leader>M", "<cmd>lua require('telescope.builtin').keymaps()<cr>", options)
 
 keymap('n', '<Leader>sb', '<cmd>:SymbolsOutline<cr>', options)
 
 keymap('n', '<F5>', ":AsyncTask file-run<cr>", options)
 keymap('n', '<F9>', ":AsyncTask file-build<cr>", options)
+
+keymap("n", "<leader>fn", "<cmd>lua require('telescope').extensions.notify.notify()<CR>", options)
+
+keymap("n", "<leader>ft", "<cmd>TodoTelescope theme=dropdown<CR>", options)

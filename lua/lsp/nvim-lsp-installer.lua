@@ -3,7 +3,6 @@
 --   Plugin:    nvim-lsp-installer
 --   Github:    github.com/williamboman/nvim-lsp-installer
 -- ───────────────────────────────────────────────── --
--- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ --
 -- ━━━━━━━━━━━━━━━━━━━❰ configs ❱━━━━━━━━━━━━━━━━━━━ --
 -- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ --
 local lsp_installer = require("nvim-lsp-installer")
@@ -11,8 +10,6 @@ local lsp_installer = require("nvim-lsp-installer")
 -- Provide settings first!
 lsp_installer.settings {
     ui = {icons = {server_installed = "✓", server_pending = "➜", server_uninstalled = "✗"}},
-    -- Limit for the maximum amount of servers to be installed at the same time. Once this limit is reached, any further
-    -- servers that are requested to be installed will be put in a queue.
     max_concurrent_installers = 4
 }
 
@@ -74,8 +71,8 @@ local servers = {
     "sumneko_lua", -- for Lua
     -- "rust_analyzer",      -- for Rust
     -- "pyright",            -- for Python
-    "clangd" -- for C/C++
-    -- "bashls",             -- for Bash
+    "clangd", -- for C/C++
+    "bashls" -- for Bash
 }
 
 -- setup the LS
@@ -91,4 +88,3 @@ for _, server in ipairs(servers) do install_server(server) end
 -- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ --
 -- ━━━━━━━━━━━━━━━━━❰ end configs ❱━━━━━━━━━━━━━━━━━ --
 -- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ --
-
