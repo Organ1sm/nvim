@@ -70,7 +70,7 @@ end
 local servers = {
     "sumneko_lua", -- for Lua
     -- "rust_analyzer",      -- for Rust
-    -- "pyright",            -- for Python
+    "pyright",            -- for Python
     "clangd", -- for C/C++
     "bashls" -- for Bash
 }

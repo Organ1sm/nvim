@@ -15,24 +15,9 @@ local sources = {
     formatting.prettier,
     formatting.lua_format.with({extra_args = require("formater.lua_format").args}),
     formatting.clang_format,
-    formatting.cmake_format.with({extra_args = require("formater.cmake_format").args})
-    -- formatting.cmake_format.with({extra_args = {"--line-width=100", "--max-pargs-hwrap=5", "--dangle-parens=true"}})
+    formatting.cmake_format.with({extra_args = require("formater.cmake_format").args}),
+    formatting.black.with({extra_args = {"--fast"}})
 }
-null_ls.setup({
-    debug = false,
-    sources = sources,
-    on_attach = function(client)
-        if client.resolved_capabilities.document_formatting then
-            -- vim.cmd([[
-            -- augroup LspFormatting
-            --     autocmd! * <buffer>
-            --     autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()
-            -- augroup END
-            -- ]])
-        end
-    end
-})
-
 -- ───────────────────────────────────────────────── --
 -- ─────────────────❰ COMPLETION ❱────────────────── --
 -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/completion
