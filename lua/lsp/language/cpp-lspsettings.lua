@@ -7,7 +7,7 @@ settings = {
         "--background-index",
         "--compile-commands-dir=build",
         "-j=12",
-        "--query-driver=/opt/llvm-12/bin/clang++",
+        "--query-driver=clang++",
         "--clang-tidy",
         "--clang-tidy-checks=performance-*,bugprone-*",
         "--all-scopes-completion",

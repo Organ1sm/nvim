@@ -4,8 +4,6 @@ M.args = {
     "--line-width=100",
     "--max-pargs-hwrap=5",
     "--dangle-parens=true"
-    -- ""
-    -- "--dangle-parens=True",
 }
 
 return M

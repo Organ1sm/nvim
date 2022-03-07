@@ -33,10 +33,8 @@ local function make_server_ready(attach)
         -- [https://github.com/jose-elias-alvarez/null-ls.nvim/issues/428]
         if server.name == "clangd" then
             local settings = require("lsp.language.cpp-lspsettings")
-            -- opts.init_options = settings.init_options
             opts.cmd = settings.cmd
             opts.filetypes = settings.filetypes
-            -- capabilities = vim.lsp.protocol.make_client_capabilities()
             capabilities.offsetEncoding = {"utf-16"}
         end
 
