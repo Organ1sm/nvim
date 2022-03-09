@@ -6,11 +6,9 @@
 local keymap = vim.api.nvim_set_keymap
 local options = {noremap = true, silent = true}
 local silent = {silent = true}
-local function mapcmd(key, cmd) vim.api.nvim_set_keymap('n', key, ':' .. cmd .. '<cr>', {noremap = true}) end
 
 -- to quit vim
 keymap('n', '<leader>Q', ':wq<cr>', options)
-mapcmd('<leader>bd', 'bdelete')
 keymap('n', 'H', "^", options)
 keymap('v', 'H', "^", options)
 keymap('n', 'L', "$", options)

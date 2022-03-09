@@ -137,10 +137,16 @@ return require('packer').startup(function()
     use {"folke/which-key.nvim", config = function() require("which-key").setup {} end}
 
     -- A snazzy bufferline for Neovim
+    -- use {
+    --     'akinsho/nvim-bufferline.lua',
+    --     requires = 'kyazdani42/nvim-web-devicons',
+    --     config = [[ require('plugins/nvim-bufferline') ]]
+    -- }
+
     use {
-        'akinsho/nvim-bufferline.lua',
-        requires = 'kyazdani42/nvim-web-devicons',
-        config = [[ require('plugins/nvim-bufferline') ]]
+        'romgrk/barbar.nvim',
+        requires = {'kyazdani42/nvim-web-devicons'},
+        config = [[ require("plugins/nvim-barbar") ]]
     }
 
     use {'simrat39/symbols-outline.nvim', config = [[ require('plugins/nvim-symbols-outline') ]]}

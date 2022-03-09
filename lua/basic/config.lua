@@ -25,7 +25,6 @@ cmd([[ :nnoremap <c-z> <nop><cr> ]])
 -- 	pattern = '/usr/include/c++/*',
 -- 	command = 'set ft=cpp',
 -- })
-
 vim.api.nvim_command('augroup set_filetype_for_stdlib')
 vim.api.nvim_command('autocmd BufRead /usr/include/c++/* set ft=cpp')
 vim.api.nvim_command('augroup end')

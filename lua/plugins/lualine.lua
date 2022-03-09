@@ -87,8 +87,9 @@ require'lualine'.setup {
     },
 
     sections = {
-        lualine_a = {
-            {'mode', right_padding = 0, left_padding = 0, component_separators = ''},
+        lualine_a = {{'mode', right_padding = 0, left_padding = 0, component_separators = ''}},
+
+        lualine_b = {
             {
                 'branch',
                 -- icon = '',
@@ -98,7 +99,7 @@ require'lualine'.setup {
             }
         },
 
-        lualine_b = {
+        lualine_c = {
             {
                 'filename',
                 file_status = true, -- displays file status (readonly status, modified status)
@@ -110,8 +111,6 @@ require'lualine'.setup {
                 icons_enabled = true
             }
         },
-
-        lualine_c = {''},
 
         lualine_x = {
             {
@@ -162,7 +161,7 @@ require'lualine'.setup {
 
     inactive_sections = {
         lualine_a = {},
-        lualine_b = {"branch"},
+        lualine_b = {},
         lualine_c = {'filename'},
         lualine_x = {'location'},
         lualine_y = {},

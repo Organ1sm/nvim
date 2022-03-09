@@ -1,4 +1,3 @@
-vim.o.termguicolors = true
 vim.opt.termguicolors = true
 
 vim.g.encoding = "UTF-8"
