@@ -25,7 +25,6 @@ local colors = {
     magenta = '#c678dd'
 }
 
-
 local lsp_status = require("lsp-status")
 -- copied from https://gist.github.com/hoob3rt/b200435a765ca18f09f83580a606b878#file-evil_lualine-lua-L21
 local conditions = {
@@ -60,7 +59,6 @@ function _G.set_lualine_diagnostic_highlights()
     vim.cmd('highlight my_hl_hint guifg=Green guibg=#504945')
 end
 vim.cmd('autocmd ColorScheme * :call v:lua.set_lualine_diagnostic_highlights()')
-
 
 --[[
 Lualine has sections as shown below.
@@ -135,12 +133,7 @@ require'lualine'.setup {
             },
             {
                 'diagnostics',
-
-                -- Table of diagnostic sources, available sources are:
-                --   'nvim_lsp', 'nvim_diagnostic', 'coc', 'ale', 'vim_lsp'.
-                -- or a function that returns a table as such:
-                --   { error=error_cnt, warn=warn_cnt, info=info_cnt, hint=hint_cnt }
-                sources = {'nvim_diagnostic', },
+                sources = {'nvim_diagnostic'},
 
                 -- Displays diagnostics for the defined severity types
                 sections = {'error', 'warn', 'info', 'hint'},

@@ -22,7 +22,11 @@ onedarkpro.setup({
         treesitter = true
         -- Others omitted for brevity
     },
-    hlgroups = {CmpItemAbbrMatch = {fg = "#118dc3", style = "bold"}},
+    hlgroups = {
+        CmpItemAbbrMatch = {fg = "#118dc3", style = "bold"},
+        NvimTreeNormal = {bg = "#1b1f27"},
+        NvimTreeNormalNC = {bg = "#1b1f27"}
+    },
     styles = {
         strings = "NONE", -- Style that is applied to strings
         comments = "NONE", -- Style that is applied to comments
