@@ -43,6 +43,18 @@ return require('packer').startup(function()
     -- Utility functions for getting diagnostic status and progress messages from LSP servers, for use in the Neovim statusline
     use {'nvim-lua/lsp-status.nvim', config = [[ require('lsp/lsp-status') ]]}
 
+    -- lsp diag colors
+    use {
+        "folke/lsp-colors.nvim",
+        config = function()
+            require("lsp-colors").setup({
+                Error = "#db4b4b",
+                Warning = "#e0af68",
+                Information = "#0db9d7",
+                Hint = "#10B981"
+            })
+        end
+    }
     use {"ray-x/lsp_signature.nvim", config = [[ require('lsp/lsp-signature') ]]}
     use {'tami5/lspsaga.nvim', config = [[ require("lsp/nvim-lspsaga") ]]}
     use {"j-hui/fidget.nvim", config = [[ require("lsp/nvim-fidget") ]]}
@@ -107,7 +119,9 @@ return require('packer').startup(function()
 
     use {"ur4ltz/surround.nvim", config = [[ require('plugins/nvim-surround') ]]}
 
-    -- use {"rmagatti/auto-session", config = [[ require("plugins/nvim-autosession") ]]}
+    use {"rmagatti/auto-session", config = [[ require("plugins/nvim-autosession") ]]}
+
+    use {"kevinhwang91/nvim-bqf", ft = "qf"}
 
     use {"ethanholz/nvim-lastplace", config = [[ require("plugins/nvim-lastplace") ]]}
 
@@ -147,6 +161,20 @@ return require('packer').startup(function()
         'romgrk/barbar.nvim',
         requires = {'kyazdani42/nvim-web-devicons'},
         config = [[ require("plugins/nvim-barbar") ]]
+    }
+    use {
+        "luukvbaal/stabilize.nvim",
+        config = function()
+            require("stabilize").setup({
+                force = true, -- stabilize window even when current cursor position will be hidden behind new window
+                forcemark = nil, -- set context mark to register on force event which can be jumped to with '<forcemark>
+                ignore = { -- do not manage windows matching these file/buftypes
+                    filetype = {"packer", "Dashboard", "Trouble", "TelescopePrompt"},
+                    buftype = {"packer", "Dashboard", "terminal", "quickfix", "loclist"}
+                },
+                nested = nil -- comma-separated list of autocmds that wil trigger the plugins window restore function
+            })
+        end
     }
 
     use {'simrat39/symbols-outline.nvim', config = [[ require('plugins/nvim-symbols-outline') ]]}

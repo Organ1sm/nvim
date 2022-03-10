@@ -25,6 +25,7 @@ local colors = {
     magenta = '#c678dd'
 }
 
+local lsp_status = require("lsp-status")
 -- copied from https://gist.github.com/hoob3rt/b200435a765ca18f09f83580a606b878#file-evil_lualine-lua-L21
 local conditions = {
     buffer_not_empty = function() return vim.fn.empty(vim.fn.expand('%:t')) ~= 1 end,
@@ -52,9 +53,47 @@ local function getLspServerName()
     return msg
 end
 
-local lsp_status = require('lsp-status')
-local lsp_config = require('lspconfig')
-lsp_status.register_progress()
+function _G.set_lualine_diagnostic_highlights()
+    vim.cmd('highlight my_hl_warn guifg=Orange guibg=#504945')
+    vim.cmd('highlight my_hl_error guifg=Red guibg=#504945')
+    vim.cmd('highlight my_hl_hint guifg=Green guibg=#504945')
+end
+vim.cmd('autocmd ColorScheme * :call v:lua.set_lualine_diagnostic_highlights()')
+
+local function myDiagnostics()
+    local errors = 0
+    local warnings = 0
+    local hints = 0
+
+    local cur_buf_errors = 0
+    local cur_buf_warnings = 0
+    local cur_buf_hints = 0
+    for _, buffer in ipairs(vim.fn['getbufinfo']()) do -- Loop through buffers
+        if buffer.listed == 1 and buffer.name ~= '' then -- If the buffer is listed and it is not a no-name buffer
+            local bufnr = buffer.bufnr
+            local buf_errors = vim.diagnostic.get(bufnr, {serverity = vim.iagnostic.severity.ERROR})
+            local buf_warnings = vim.diagnostic.get(bufnr, {serverity = vim.diagnostic.severity.WARN})
+            local buf_hints = vim.diagnostic.get(bufnr, {serverity = vim.diagnostic.severity.HINT})
+
+            errors = errors + buf_errors -- Add this buffer's errors to the total errors
+            warnings = warnings + buf_warnings -- Same with warnings
+            hints = hints + buf_hints
+
+            if bufnr == vim.fn.bufnr() then -- If this buffer is the currently open buffer
+                cur_buf_errors = buf_errors
+                cur_buf_warnings = buf_warnings
+                cur_buf_hints = buf_hints
+            end
+        end
+    end
+    if errors ~= 0 or warnings ~= 0 then -- If there is at least one error or warning
+        return "%#my_hl_error# E " .. tostring(cur_buf_errors) .. ":" .. tostring(errors) .. "%#my_hl_warn# W " ..
+                   tostring(cur_buf_warnings) .. ":" .. tostring(warnings) .. "%#lualine_b_normal#" .. "%#my_hl_hint# H" ..
+                   tostring(cur_buf_hints) .. ":" .. tostring(hints) .. "%#lualine_b_normal#"
+    else
+        return '' -- Otherwise return empty string
+    end
+end
 
 --[[
 Lualine has sections as shown below.
@@ -76,7 +115,7 @@ require'lualine'.setup {
         theme = 'material',
         section_separators = {'', ''}, -- separators between sections
         -- component_separators = {'|', '|'},
-        disabled_filetypes = {}, -- disable lualine for specific filetypes
+        disabled_filetypes = {"NvimTree", "neo-tree", "dashboard", "Outline"}, -- disable lualine for specific filetypes
         icons_enabled = 1, -- displays icons in alongside component
         -- padding                 = 0,              -- adds padding to the left and right of components
         left_padding = 0, -- adds padding to the left of components
@@ -103,12 +142,20 @@ require'lualine'.setup {
             {
                 'filename',
                 file_status = true, -- displays file status (readonly status, modified status)
-                path = 1, -- 0 = just filename, 1 = relative path, 2 = absolute path
+                path = 0, -- 0 = just filename, 1 = relative path, 2 = absolute path
                 condition = conditions.buffer_not_empty,
                 left_padding = 1, -- adds padding to the left of components
                 right_padding = 1, -- adds padding to the right of components
                 component_separators = '',
                 icons_enabled = true
+            },
+            {
+                'diff',
+                symbols = {added = '+ ', modified = '~ ', removed = '- '},
+                color_added = colors.green,
+                color_modified = colors.orange,
+                color_removed = colors.red,
+                condition = conditions.hide_in_width
             }
         },
 
@@ -120,11 +167,30 @@ require'lualine'.setup {
                 component_separators = {left = '', right = ''}
             },
             {
-                "diagnostics",
-                sources = {"nvim_diagnostic"}, --
+                'diagnostics',
+
+                -- Table of diagnostic sources, available sources are:
+                --   'nvim_lsp', 'nvim_diagnostic', 'coc', 'ale', 'vim_lsp'.
+                -- or a function that returns a table as such:
+                --   { error=error_cnt, warn=warn_cnt, info=info_cnt, hint=hint_cnt }
+                sources = {'nvim_diagnostic', },
+
+                -- Displays diagnostics for the defined severity types
+                sections = {'error', 'warn', 'info', 'hint'},
+
+                diagnostics_color = {
+                    -- Same values as the general color option can be used here.
+                    error = 'DiagnosticError', -- Changes diagnostics' error color.
+                    warn = 'DiagnosticWarn', -- Changes diagnostics' warn color.
+                    info = 'DiagnosticInfo', -- Changes diagnostics' info color.
+                    hint = 'DiagnosticHint' -- Changes diagnostics' hint color.
+                },
+                symbols = {error = 'E', warn = 'W', info = 'I', hint = 'H'},
+                colored = true, -- Displays diagnostics status in color if set to true.
+                update_in_insert = false, -- Update diagnostics in insert mode.
+                always_visible = false, -- Show diagnostics even if there are none.
                 component_separators = {left = '', right = ''}
             },
-
             {
                 getLspServerName,
                 color = {fg = colors.white, gui = 'bold'},
