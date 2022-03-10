@@ -25,6 +25,7 @@ local colors = {
     magenta = '#c678dd'
 }
 
+
 local lsp_status = require("lsp-status")
 -- copied from https://gist.github.com/hoob3rt/b200435a765ca18f09f83580a606b878#file-evil_lualine-lua-L21
 local conditions = {
@@ -60,40 +61,6 @@ function _G.set_lualine_diagnostic_highlights()
 end
 vim.cmd('autocmd ColorScheme * :call v:lua.set_lualine_diagnostic_highlights()')
 
-local function myDiagnostics()
-    local errors = 0
-    local warnings = 0
-    local hints = 0
-
-    local cur_buf_errors = 0
-    local cur_buf_warnings = 0
-    local cur_buf_hints = 0
-    for _, buffer in ipairs(vim.fn['getbufinfo']()) do -- Loop through buffers
-        if buffer.listed == 1 and buffer.name ~= '' then -- If the buffer is listed and it is not a no-name buffer
-            local bufnr = buffer.bufnr
-            local buf_errors = vim.diagnostic.get(bufnr, {serverity = vim.iagnostic.severity.ERROR})
-            local buf_warnings = vim.diagnostic.get(bufnr, {serverity = vim.diagnostic.severity.WARN})
-            local buf_hints = vim.diagnostic.get(bufnr, {serverity = vim.diagnostic.severity.HINT})
-
-            errors = errors + buf_errors -- Add this buffer's errors to the total errors
-            warnings = warnings + buf_warnings -- Same with warnings
-            hints = hints + buf_hints
-
-            if bufnr == vim.fn.bufnr() then -- If this buffer is the currently open buffer
-                cur_buf_errors = buf_errors
-                cur_buf_warnings = buf_warnings
-                cur_buf_hints = buf_hints
-            end
-        end
-    end
-    if errors ~= 0 or warnings ~= 0 then -- If there is at least one error or warning
-        return "%#my_hl_error# E " .. tostring(cur_buf_errors) .. ":" .. tostring(errors) .. "%#my_hl_warn# W " ..
-                   tostring(cur_buf_warnings) .. ":" .. tostring(warnings) .. "%#lualine_b_normal#" .. "%#my_hl_hint# H" ..
-                   tostring(cur_buf_hints) .. ":" .. tostring(hints) .. "%#lualine_b_normal#"
-    else
-        return '' -- Otherwise return empty string
-    end
-end
 
 --[[
 Lualine has sections as shown below.
