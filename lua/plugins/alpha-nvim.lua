@@ -11,7 +11,7 @@ local dashboard = require("alpha.themes.dashboard")
 local function footer()
     local plugins = #vim.tbl_keys(packer_plugins)
     local v = vim.version()
-    return string.format(" %s plugins   v%s.%s.%s  ", plugins, v.major, v.minor, v.patch)
+    return string.format("\n\n %s plugins   v%s.%s.%s  ", plugins, v.major, v.minor, v.patch)
 end
 
 local function pick_color()
@@ -22,13 +22,23 @@ end
 -- Set header
 dashboard.section.header.val = {
     "                                                     ",
+    "                                                     ",
+    "                                                     ",
+    "                                                     ",
+    "                                                     ",
+    "                                                     ",
+    "                                                     ",
     "  ███╗   ██╗███████╗ ██████╗ ██╗   ██╗██╗███╗   ███╗ ",
     "  ████╗  ██║██╔════╝██╔═══██╗██║   ██║██║████╗ ████║ ",
     "  ██╔██╗ ██║█████╗  ██║   ██║██║   ██║██║██╔████╔██║ ",
     "  ██║╚██╗██║██╔══╝  ██║   ██║╚██╗ ██╔╝██║██║╚██╔╝██║ ",
     "  ██║ ╚████║███████╗╚██████╔╝ ╚████╔╝ ██║██║ ╚═╝ ██║ ",
     "  ╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝ ",
-    "                                                     "
+    "                                                     ",
+    "                                                     ",
+    "                                                     ",
+    "                                                     ",
+    "                                                     ",
 }
 
 dashboard.section.header.opts.hl = pick_color()

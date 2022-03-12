@@ -156,7 +156,7 @@
     "description": "Code snippet for printing to std::cout, provided the header is set"
   },
   "#inc": {
-    "prefix": "#inc",
+    "prefix": "#inc\"",
     "body": ["#include \"$1\""],
     "description": "Code snippet for #include \" \""
   },
@@ -172,13 +172,18 @@
   },
   "main": {
     "prefix": "main",
-    "body": ["int main(int argc, const char** argv)", "{", "\t$1", "", "\treturn 0;", "}"],
+    "body": ["int main()", "{", "\t$1", "", "\treturn 0;", "}"],
     "description": "Code snippet for 'for' loop"
   },
   "#include main" : {
     "prefix": "#include main",
-    "body": ["#include <iostream>", "#include <stdlib.h>", "\n", "int main(int argc, const char** argv)", "{", "\t$0", "", "\treturn 0;", "}"],
+    "body": ["#include <iostream>",  "\n", "int main()", "{", "\t$0", "", "\treturn 0;", "}"],
     "description": "basic C++ MainFunction stracture"
+  },
+  "ttt":{
+      "prefix":"ttt",
+      "body":["template <typename $1> \n\t$2"],
+      "description":"template typename ."
   }
 }
 
