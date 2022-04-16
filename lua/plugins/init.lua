@@ -162,6 +162,7 @@ return require('packer').startup(function()
         requires = {'kyazdani42/nvim-web-devicons'},
         config = [[ require("plugins/nvim-barbar") ]]
     }
+
     use {
         "luukvbaal/stabilize.nvim",
         config = function()
@@ -176,6 +177,14 @@ return require('packer').startup(function()
             })
         end
     }
+    -- debugger
+    use {"Pocco81/DAPInstall.nvim", config = [[ require('plugins/nvim-dap-installer') ]]}
+    use {"mfussenegger/nvim-dap", config = [[ require('plugins/nvim-dap') ]]}
+    use {"theHamsta/nvim-dap-virtual-text", config = [[ require('plugins/nvim-dap-virtual-text') ]]}
+    use {"rcarriga/nvim-dap-ui", config = [[ require('plugins/nvim-dap-ui') ]]}
+    use "nvim-telescope/telescope-dap.nvim"
+
+    use {"ravenxrz/neovim-cmake", config = [[ require('plugins/nvim-cmake') ]]}
 
     use {'simrat39/symbols-outline.nvim', config = [[ require('plugins/nvim-symbols-outline') ]]}
 

@@ -59,3 +59,20 @@ keymap('n', '<F9>', ":AsyncTask file-build<cr>", options)
 keymap("n", "<leader>fn", "<cmd>lua require('telescope').extensions.notify.notify()<CR>", options)
 
 keymap("n", "<leader>ft", "<cmd>TodoTelescope theme=dropdown<CR>", options)
+
+
+-- Debug
+keymap("n", "<leader>db", "<cmd>lua require('dap').toggle_breakpoint()<CR>", options)
+keymap("n", "<F5>", "<cmd>lua require('dap').continue()<CR>", options)
+keymap("n", "<F6>", "<cmd>lua require('dap').step_into()<CR>", options)
+keymap("n", "<F7>", "<cmd>lua require('dap').step_over()<CR>", options)
+keymap("n", "<F8>", "<cmd>lua require('dap').step_out()<CR>", options)
+keymap("n", "<F9>", "<cmd>lua require('dap').run_last()<CR>", options)
+keymap(
+    "n",
+    "<F10>",
+    "<cmd>lua require'dap'.close()<CR><cmd>lua require'dap.repl'.close()<CR><cmd>lua require'dapui'.close()<CR><cmd>DapVirtualTextForceRefresh<CR>",
+    options
+)
+keymap("n", "<leader>du", "<cmd>lua require'dapui'.toggle()<CR>", options)
+
