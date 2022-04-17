@@ -115,7 +115,7 @@ return require('packer').startup(function()
 
     use {'kyazdani42/nvim-web-devicons', config = [[ require('plugins/nvim-web-devicons') ]]}
 
-    use {'numToStr/Comment.nvim', config = [[ require('plugins/nvim-comment') ]]}
+    use {'numToStr/Comment.nvim', tag = 'v0.6', config = [[ require('plugins/nvim-comment') ]]}
 
     use {"ur4ltz/surround.nvim", config = [[ require('plugins/nvim-surround') ]]}
 
@@ -148,7 +148,7 @@ return require('packer').startup(function()
     --     'folke/trouble.nvim',
     --     config = [[ require('plugins/trouble_nvim') ]]
     -- }
-    use {"folke/which-key.nvim", config = function() require("which-key").setup {} end}
+    use {"folke/which-key.nvim", config = [[ require('plugins/which-key') ]]}
 
     -- A snazzy bufferline for Neovim
     -- use {

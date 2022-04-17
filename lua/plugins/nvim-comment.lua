@@ -59,6 +59,14 @@ require('Comment').setup({
     opleader = {
         line = 'gc', ---line-comment keymap
         block = 'gb' ---block-comment keymap
+    },
+    extra = {
+        ---Add comment on the line above
+        above = 'gcO',
+        ---Add comment on the line below
+        below = 'gco',
+        ---Add comment at the end of line
+        eol = 'gcA'
     }
 })
 

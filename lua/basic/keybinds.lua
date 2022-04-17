@@ -53,8 +53,8 @@ keymap('n', "<leader>M", "<cmd>lua require('telescope.builtin').keymaps()<cr>", 
 
 keymap('n', '<Leader>sb', '<cmd>:SymbolsOutline<cr>', options)
 
-keymap('n', '<F5>', ":AsyncTask file-run<cr>", options)
-keymap('n', '<F9>', ":AsyncTask file-build<cr>", options)
+-- keymap('n', '<F5>', ":AsyncTask file-run<cr>", options)
+-- keymap('n', '<F9>', ":AsyncTask file-build<cr>", options)
 
 keymap("n", "<leader>fn", "<cmd>lua require('telescope').extensions.notify.notify()<CR>", options)
 
@@ -63,6 +63,7 @@ keymap("n", "<leader>ft", "<cmd>TodoTelescope theme=dropdown<CR>", options)
 
 -- Debug
 keymap("n", "<leader>db", "<cmd>lua require('dap').toggle_breakpoint()<CR>", options)
+keymap("n", "<F4>", "<cmd>lua require('dap').terminate()<CR>", options)
 keymap("n", "<F5>", "<cmd>lua require('dap').continue()<CR>", options)
 keymap("n", "<F6>", "<cmd>lua require('dap').step_into()<CR>", options)
 keymap("n", "<F7>", "<cmd>lua require('dap').step_over()<CR>", options)

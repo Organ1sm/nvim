@@ -10,16 +10,15 @@ require('cmake').setup({
     on_build_output = nil, -- Callback which will be called on every line that is printed during build process. Accepts printed line as argument.
     quickfix_height = 10, -- Height of the opened quickfix.
     quickfix_only_on_error = false, -- Open quickfix window only if target build failed.
+    dap_open_command = require('dap').repl.open, -- Command to run after starting DAP session. You can set it to `false` if you don't want to open anything or `require('dapui').open` if you are using https://github.com/rcarriga/nvim-dap-ui
     dap_configuration = {
-        name = "Launch file",
-        type = "cppdbg",
+        name = "Launch",
+        type = "lldb",
         request = "launch",
-        cwd = '${workspaceFolder}',
+        program = function() return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file") end,
+        cwd = "${workspaceFolder}",
         stopOnEntry = false,
-        runInTerminal = true,
-        setupCommands = {
-            {description = 'enable pretty printing', text = '-enable-pretty-printing', ignoreFailures = false}
-        }
-    }, -- DAP configuration. By default configured to work with `lldb-vscode`.
-    dap_open_command = false -- Command to run after starting DAP session. You can set it to `false` if you don't want to open anything or `require('dapui').open` if you are using https://github.com/rcarriga/nvim-dap-ui
+        args = {},
+        runInTerminal = false
+    }
 })
