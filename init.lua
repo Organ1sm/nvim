@@ -6,9 +6,9 @@ vim.g.mapleader = ' '
 
 -- ━━━━━━━━━━━━━❰ Load/Source Configs ❱━━━━━━━━━━━━━ --
 
-require('basic.config')
-require("basic.keybinds")
 require("basic.settings")
+require("basic.keybinds")
+require('basic.config')
 require('plugins')
 
 -- ━━━━━━━━━━━━━━━━━❰ end of Load ❱━━━━━━━━━━━━━━━━ --
