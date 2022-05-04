@@ -1,5 +1,5 @@
 local dap = require("dap")
-local dap_install = require("dap-install")
+-- local dap_install = require("dap-install")
 
 local dap_breakpoint = {
     error = {text = "🛑", texthl = "LspDiagnosticsSignError", linehl = "", numhl = ""},
@@ -29,4 +29,4 @@ dap.configurations.cpp = {cpp_config.configuration}
 dap.configurations.c = dap.configurations.cpp
 dap.configurations.rust = dap.configurations.cpp
 
-dap_install.config("python", {})
+-- dap_install.config("python", {})

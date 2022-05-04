@@ -9,7 +9,7 @@ require("indent_blankline").setup({
         'dashboard',
         'packer',
         'neogitstatus',
-        'NvimTree',
+        -- 'NvimTree',
         'lsp-installer'
     },
     buftype_exclude = {"terminal"},
