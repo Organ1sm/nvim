@@ -2,6 +2,16 @@ local cmp = require('cmp')
 local lspkind = require('lspkind')
 local luasnip = require("luasnip")
 
+local hasWordBefore = function()
+    local line, col = unpack(vim.api.nvim_win_get_cursor(0))
+    return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
+
+end
+
+local feedKey = function(key, mode)
+    vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes(key, true, true, true), mode, true)
+end
+
 cmp.setup {
     -- 指定 snippet 引擎
     snippet = {expand = function(args) require('luasnip').lsp_expand(args.body) end},
@@ -11,7 +21,10 @@ cmp.setup {
         {name = 'nvim_lua'}, --
         {name = 'emoji'}
     }, --
-    {{name = 'buffer'}, {name = 'path'}}),
+    {
+        {name = 'buffer'}, --
+        {name = 'path'}
+    }),
 
     completion = {keyword_length = 1, completeopt = "menu,noselect"},
 
@@ -47,17 +60,24 @@ cmp.setup.cmdline(':', {
 
 cmp.setup({
     mapping = {
-        ['<C-Space>'] = cmp.mapping.complete(),
-        ['<Esc>'] = cmp.mapping.close(),
-        ['<C-u>'] = cmp.mapping.scroll_docs(-4),
-        ['<C-d>'] = cmp.mapping.scroll_docs(4),
-        ['<CR>'] = cmp.mapping.confirm({behavior = cmp.ConfirmBehavior.Replace, select = true}),
+        ['<Esc>'] = cmp.mapping({
+            i = cmp.mapping.abort(), --
+            c = cmp.mapping.close()
+        }),
+        ['<C-u>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), {"i", "c"}),
+        ['<C-d>'] = cmp.mapping(cmp.mapping.scroll_docs(4), {"i", "c"}),
+        ['<CR>'] = cmp.mapping.confirm({
+            behavior = cmp.ConfirmBehavior.Replace, --
+            select = true
+        }),
 
         ["<Tab>"] = cmp.mapping(function(fallback)
             if cmp.visible() then
                 cmp.select_next_item()
-            elseif luasnip.expand_or_jumpable() then
-                luasnip.expand_or_jump()
+            elseif luasnip and luasnip.expand_or_jumpable() then
+                feedKey("<Plug>luasnip-expand-or-jump", "")
+            elseif hasWordBefore() then
+                cmp.complete()
             else
                 fallback()
             end
@@ -66,8 +86,8 @@ cmp.setup({
         ["<S-Tab>"] = cmp.mapping(function(fallback)
             if cmp.visible() then
                 cmp.select_prev_item()
-            elseif luasnip.jumpable(-1) then
-                luasnip.jump(-1)
+            elseif luasnip and luasnip.jumpable(-1) then
+                feedKey("<Plug>luasnip-jump-prev", "")
             else
                 fallback()
             end

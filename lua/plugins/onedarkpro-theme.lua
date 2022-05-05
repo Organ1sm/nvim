@@ -10,7 +10,8 @@ onedarkpro.setup({
         end
     end,
 
-    colors = {onedark = {bg = "#0d1117"}}, -- Override default colors. Can specify colors for "onelight" or "onedark" themes by passing in a table
+    -- colors = {onedark = {bg = "#0d1117"}}, -- Override default colors. Can specify colors for "onelight" or "onedark" themes by passing in a table
+    colors = {onedark = {bg = "#000000"}}, -- Override default colors. Can specify colors for "onelight" or "onedark" themes by passing in a table
     plugins = { -- Override which plugins highlight groups are loaded
         native_lsp = true,
         -- nvim_cmp = false,
@@ -20,8 +21,8 @@ onedarkpro.setup({
     },
     hlgroups = {
         CmpItemAbbrMatch = {fg = "#118dc3", style = "bold"},
-        -- NvimTreeNormal = {bg = "#1b1f27"},
-        -- NvimTreeNormalNC = {bg = "#1b1f27"}
+        NvimTreeNormal = {bg = "#0d1117"},
+        NvimTreeNormalNC = {bg = "#0d1117"}
     },
     styles = {
         strings = "NONE", -- Style that is applied to strings
