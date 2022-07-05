@@ -78,7 +78,7 @@ M.On_attach = function(client, bufnr)
     local opts = {noremap = true, silent = true}
 
     -- See `:help vim.lsp.*` for documentation on any of the below functions
-    -- ───────────────────────────────────────────────── --
+    -- ───────────────────────────────────────────────── ---
     buf_set_keymap('n', '<space>e', '<cmd>Telescope diagnostics theme=dropdown<CR>', opts)
     buf_set_keymap('n', 'dq', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts)
     buf_set_keymap('n', 'g[', '<cmd>Lspsaga diagnostic_jump_prev<CR>', opts)
@@ -88,7 +88,7 @@ M.On_attach = function(client, bufnr)
     buf_set_keymap('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
     buf_set_keymap('n', 'gd', '<cmd>Telescope lsp_definitions theme=dropdown<CR>', opts)
     buf_set_keymap('n', 'gr', '<cmd>Telescope lsp_references theme=dropdown<CR>', opts)
-    buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
+    buf_set_keymap('n', 'gI', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
     buf_set_keymap('n', '<leader>rn', '<cmd>Lspsaga rename<CR>', opts)
     buf_set_keymap("n", "<leader>fm", '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
 
@@ -97,7 +97,7 @@ M.On_attach = function(client, bufnr)
     buf_set_keymap('n', '[ls', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
     buf_set_keymap('n', '<space>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
 
-    buf_set_keymap('n', '<leader>ca', '<cmd>Telescope lsp_code_actions theme=dropdown<CR>', opts)
+    buf_set_keymap('n', '<leader>ca', '<cmd>Lspsaga code_action<CR>', opts)
     -- buf_set_keymap('n', '<leader>wa',    '<cmd>lua vim.lsp.buf.add_workleader_folder()<CR>',          opts)
     -- buf_set_keymap('n', '<leader>wr',    '<cmd>lua vim.lsp.buf.remove_workleader_folder()<CR>',       opts)
     -- buf_set_keymap('n', '<leader>wl',   '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workleader_folders()))<CR>', opts)

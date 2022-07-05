@@ -56,7 +56,7 @@ return require('packer').startup(function()
         end
     }
     use {"ray-x/lsp_signature.nvim", config = [[ require('lsp/lsp-signature') ]]}
-    use {'tami5/lspsaga.nvim', config = [[ require("lsp/nvim-lspsaga") ]]}
+    use {"glepnir/lspsaga.nvim", config = [[ require("lsp/nvim-lspsaga") ]]}
     use {"j-hui/fidget.nvim", config = [[ require("lsp/nvim-fidget") ]]}
     -- use {"kosayoda/nvim-lightbulb", config = [[require("lsp/nvim-lightbulb") ]]}
     -- ====================================================================================================

@@ -11,9 +11,6 @@ local keymap = vim.api.nvim_set_keymap
 local options = {noremap = true, silent = true}
 local tree_cb = require'nvim-tree.config'.nvim_tree_callback
 
-vim.g.nvim_tree_git_hl = 1 -- 0 by default, will enable file highlight for git attributes (can be used without the icons).
-vim.g.nvim_tree_highlight_opened_files = 1 -- 0 by default, will enable folder and file icon highlight for opened files/directories.
-vim.g.nvim_tree_add_trailing = 0
 
 require'nvim-tree'.setup {
     auto_reload_on_write = true,
@@ -30,7 +27,6 @@ require'nvim-tree'.setup {
     git = {enable = false},
     update_focused_file = {enable = true, update_cwd = false, ignore_list = {}},
     system_open = {cmd = nil, args = {}},
-    filters = {dotfiles = false, custom = {}},
 
     view = {
         width = 30,
@@ -41,6 +37,30 @@ require'nvim-tree'.setup {
         relativenumber = false,
         mappings = {custom_only = false, list = {{key = "g?", cb = tree_cb("toggle_help")}}}
     },
+
+    filters = {dotfiles = true, custom = {".git", "node_modules", ".cache"}},
+
+    actions = {
+        change_dir = {enable = true, global = false},
+        open_file = {
+            quit_on_open = false,
+            resize_window = false,
+            window_picker = {
+                enable = true,
+                chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890",
+                exclude = {
+                    filetype = {"notify", "packer", "qf", "diff", "fugitive", "fugitiveblame"},
+                    buftype = {"nofile", "terminal", "help"}
+                }
+            }
+        }
+    },
+
+    renderer = {
+        indent_markers = {enable = false, icons = {corner = "└ ", edge = "│ ", none = "  "}},
+        icons = {webdev_colors = true}
+    },
+
     ignore_ft_on_setup = {
         -- ".git",
         "node_modules",
